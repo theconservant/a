@@ -6,6 +6,14 @@ var upgrade_speed = 0; //the level of the speed up upgrade
 var click_rate = 1000; //ms between each autoclick
 var interval_auto; //storing our interval here so we can update it
 var click_increment = 1; //how many clicks per click
+var save = {
+    clicks: clicks,
+    auto_clicks: auto_clicks,
+    cost: cost,
+    upgrade_speed: upgrade_speed,
+    click_rate: click_rate,
+    click_increment: click_increment
+}
 //functions
 function myName() {
     var name = document.getElementById("fname");
@@ -101,4 +109,7 @@ function get_cookie(cookie_name) {
     }
     c_value = atob(unescape(c_value.substring(c_start, c_end)));
     return JSON.parse(c_value);
+    
+//saving
+localStorage.setItem("save",JSON.stringify(save))
 }
