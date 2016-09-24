@@ -7,7 +7,10 @@ var click_rate = 1000; //ms between each autoclick
 var interval_auto; //storing our interval here so we can update it
 var click_increment = 1; //how many clicks per click
 //functions
-
+function myName() {
+    var name = document.getElementById("fname");
+    name.value = name.value.toUpperCase();
+}
 function update_total_clicks() { //updates the number of clicks   
     var e = document.getElementById("total_clicks");
     e.innerHTML = clicks;
