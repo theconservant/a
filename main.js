@@ -6,6 +6,7 @@ var upgrade_speed = 0; //the level of the speed up upgrade
 var click_rate = 1000; //ms between each autoclick
 var interval_auto; //storing our interval here so we can update it
 var click_increment = 1; //how many clicks per click
+var cafe = 0; //increment autoclicks  
 var save = {
     clicks: clicks,
     auto_clicks: auto_clicks,
@@ -109,7 +110,21 @@ function get_cookie(cookie_name) {
     }
     c_value = atob(unescape(c_value.substring(c_start, c_end)));
     return JSON.parse(c_value);
-    
+
+function buycafe(){
+	var costCafe = Math.floor(10*Math.pow(1.5, cafe));
+	if (cookies2 >= costCafe){
+		cafe = cafe + 1;
+		cookies2 = cookies2 - costCafe;
+	};
+	var nextCostCafe = Math.floor(10*Math.pow(1.5, cafe));
+	document.getElementById('cafe').innerHTML = cafe;
+	document.getElementById('costCafe').innerHTML = nextCostCafe;
+	document.getElementById('cookies2').innerHTML = cookies2;
+	document.getElementById('cursors').innerHTML = cursors*1.1;
+	
+};
+
 //saving
 localStorage.setItem("save",JSON.stringify(save))
 }
