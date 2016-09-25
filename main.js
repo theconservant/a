@@ -15,6 +15,7 @@ var save = {
     click_rate: click_rate,
     click_increment: click_increment
 }
+var savegame = JSON.parse(localStorage.getItem("save"));
 //functions
 function myName() {
     var name = document.getElementById("fname");
