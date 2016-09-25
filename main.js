@@ -113,15 +113,15 @@ function get_cookie(cookie_name) {
 
 function buycafe(){
 	var costCafe = Math.floor(10*Math.pow(1.5, cafe));
-	if (cookies2 >= costCafe){
+	if (clicks >= costCafe){
 		cafe = cafe + 1;
-		cookies2 = cookies2 - costCafe;
+		clicks = clicks - costCafe;
 	};
 	var nextCostCafe = Math.floor(10*Math.pow(1.5, cafe));
 	document.getElementById('cafe').innerHTML = cafe;
 	document.getElementById('costCafe').innerHTML = nextCostCafe;
-	document.getElementById('cookies2').innerHTML = cookies2;
-	document.getElementById('cursors').innerHTML = cursors*1.1;
+	document.getElementById('clicks').innerHTML = clicks;
+	document.getElementById('auto_clicks').innerHTML = auto_clicks*1.1;
 	
 };
 
